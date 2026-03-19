@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Omri Argaman | Portfolio</title>
+
     <style>
         * {
             box-sizing: border-box;
@@ -11,17 +12,23 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fb;
-            color: #222;
+            background: #ffffff;
+            color: #1f2937;
             line-height: 1.6;
         }
 
         header {
-            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
             border-bottom: 1px solid #e5e7eb;
-            padding: 20px 0;
         }
 
         .container {
@@ -34,24 +41,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 18px 0;
             flex-wrap: wrap;
         }
 
         nav h1 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: #111827;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 22px;
+            flex-wrap: wrap;
         }
 
         nav a {
             text-decoration: none;
             color: #374151;
             font-weight: bold;
+            transition: 0.2s;
         }
 
         nav a:hover {
@@ -59,13 +69,13 @@
         }
 
         .hero {
-            padding: 60px 0 40px;
+            padding: 70px 0 30px;
             text-align: center;
         }
 
         .hero h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
+            font-size: 2.3rem;
+            margin-bottom: 12px;
             color: #111827;
         }
 
@@ -77,19 +87,20 @@
         }
 
         section {
-            padding: 50px 0;
+            padding: 55px 0;
+            scroll-margin-top: 90px;
         }
 
         .section-box {
-            background-color: white;
+            background: #f9fafb;
             border: 1px solid #e5e7eb;
-            border-radius: 14px;
+            border-radius: 16px;
             padding: 30px;
         }
 
         h3 {
             font-size: 1.8rem;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             color: #111827;
         }
 
@@ -106,9 +117,9 @@
         }
 
         .project-card {
-            background-color: #f9fafb;
+            background: #ffffff;
             border: 1px solid #e5e7eb;
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 20px;
         }
 
@@ -119,7 +130,7 @@
 
         .project-card p {
             color: #4b5563;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .project-card a {
@@ -132,21 +143,52 @@
             text-decoration: underline;
         }
 
+        .floating-photo {
+            position: fixed;
+            right: 28px;
+            bottom: 28px;
+            width: 170px;
+            z-index: 999;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .floating-photo img {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .floating-photo p {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-top: 8px;
+        }
+
         footer {
             text-align: center;
-            padding: 25px 0;
+            padding: 30px 0 40px;
             color: #6b7280;
             font-size: 0.95rem;
+        }
+
+        @media (max-width: 900px) {
+            .floating-photo {
+                width: 120px;
+                right: 14px;
+                bottom: 14px;
+            }
         }
 
         @media (max-width: 600px) {
             nav {
                 flex-direction: column;
                 gap: 12px;
-            }
-
-            nav ul {
-                padding: 0;
             }
 
             .hero h2 {
@@ -156,10 +198,24 @@
             h3 {
                 font-size: 1.5rem;
             }
+
+            .floating-photo {
+                position: fixed;
+                top: 90px;
+                right: 10px;
+                bottom: auto;
+                width: 95px;
+                padding: 6px;
+            }
+
+            .floating-photo p {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
+
 <header>
     <div class="container">
         <nav>
@@ -179,7 +235,6 @@
             <h2>Computer Science Student & Developer</h2>
             <p>
                 I build software projects in web development, machine learning, and intelligent systems.
-                I enjoy turning ideas into practical, clean, and usable solutions.
             </p>
         </div>
     </section>
@@ -190,11 +245,11 @@
                 <h3>About Me</h3>
                 <p>
                     I am a Computer Science student with interest in software engineering,
-                    fullstack development, machine learning, and real-world systems.
+                    fullstack development, machine learning, and practical systems.
                 </p>
                 <p>
                     I enjoy building end-to-end projects, learning new technologies,
-                    and solving practical technical problems.
+                    and solving real technical problems with clean and useful solutions.
                 </p>
                 <p>
                     I am currently looking for opportunities where I can grow as a developer
@@ -212,8 +267,8 @@
                     <div class="project-card">
                         <h4>Video Analytics System</h4>
                         <p>
-                            A system for analyzing video events using detection models, analytics,
-                            and natural-language style interaction.
+                            A system for analyzing video events using detection models,
+                            analytics, and natural-language interaction.
                         </p>
                         <a href="#">Project Link</a>
                     </div>
@@ -221,7 +276,8 @@
                     <div class="project-card">
                         <h4>Invoice Analysis Platform</h4>
                         <p>
-                            A platform for extracting and analyzing data from invoices and financial documents.
+                            A platform for extracting and analyzing data from invoices
+                            and financial documents.
                         </p>
                         <a href="#">Project Link</a>
                     </div>
@@ -229,7 +285,8 @@
                     <div class="project-card">
                         <h4>SVM Stock Prediction</h4>
                         <p>
-                            A machine learning project using SVM models for stock-related classification tasks.
+                            A machine learning project using SVM models for stock-related
+                            classification tasks.
                         </p>
                         <a href="#">Project Link</a>
                     </div>
@@ -250,8 +307,14 @@
     </section>
 </main>
 
+<div class="floating-photo">
+    <img src="profile.jpg" alt="Profile photo" />
+    <p>Your photo</p>
+</div>
+
 <footer>
     <p>© 2026 Omri Argaman</p>
 </footer>
+
 </body>
 </html>
