@@ -68,27 +68,13 @@
             color: #2563eb;
         }
 
-        .hero {
-            padding: 70px 0 30px;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 2.3rem;
-            margin-bottom: 12px;
-            color: #111827;
-        }
-
-        .hero p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: #4b5563;
-            font-size: 1.05rem;
+        main {
+            padding-top: 30px;
         }
 
         section {
-            padding: 55px 0;
-            scroll-margin-top: 90px;
+            padding: 40px 0;
+            scroll-margin-top: 100px;
         }
 
         .section-box {
@@ -98,8 +84,8 @@
             padding: 30px;
         }
 
-        h3 {
-            font-size: 1.8rem;
+        h2 {
+            font-size: 2rem;
             margin-bottom: 18px;
             color: #111827;
         }
@@ -108,6 +94,7 @@
         .contact p {
             color: #4b5563;
             margin-bottom: 12px;
+            max-width: 760px;
         }
 
         .projects-grid {
@@ -123,9 +110,10 @@
             padding: 20px;
         }
 
-        .project-card h4 {
+        .project-card h3 {
             margin-bottom: 10px;
             color: #111827;
+            font-size: 1.15rem;
         }
 
         .project-card p {
@@ -146,7 +134,7 @@
         .floating-photo {
             position: fixed;
             right: 28px;
-            bottom: 28px;
+            top: 110px;
             width: 170px;
             z-index: 999;
             background: #ffffff;
@@ -181,7 +169,7 @@
             .floating-photo {
                 width: 120px;
                 right: 14px;
-                bottom: 14px;
+                top: 95px;
             }
         }
 
@@ -191,19 +179,14 @@
                 gap: 12px;
             }
 
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-
-            h3 {
-                font-size: 1.5rem;
+            h2 {
+                font-size: 1.6rem;
             }
 
             .floating-photo {
                 position: fixed;
-                top: 90px;
+                top: 100px;
                 right: 10px;
-                bottom: auto;
                 width: 95px;
                 padding: 6px;
             }
@@ -230,19 +213,10 @@
 </header>
 
 <main>
-    <section class="hero">
-        <div class="container">
-            <h2>Computer Science Student & Developer</h2>
-            <p>
-                I build software projects in web development, machine learning, and intelligent systems.
-            </p>
-        </div>
-    </section>
-
     <section id="about">
         <div class="container">
             <div class="section-box about">
-                <h3>About Me</h3>
+                <h2>About Me</h2>
                 <p>
                     I am a Computer Science student with interest in software engineering,
                     fullstack development, machine learning, and practical systems.
@@ -262,10 +236,10 @@
     <section id="projects">
         <div class="container">
             <div class="section-box">
-                <h3>Projects</h3>
+                <h2>Projects</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <h4>Video Analytics System</h4>
+                        <h3>Video Analytics System</h3>
                         <p>
                             A system for analyzing video events using detection models,
                             analytics, and natural-language interaction.
@@ -274,7 +248,7 @@
                     </div>
 
                     <div class="project-card">
-                        <h4>Invoice Analysis Platform</h4>
+                        <h3>Invoice Analysis Platform</h3>
                         <p>
                             A platform for extracting and analyzing data from invoices
                             and financial documents.
@@ -283,7 +257,7 @@
                     </div>
 
                     <div class="project-card">
-                        <h4>SVM Stock Prediction</h4>
+                        <h3>SVM Stock Prediction</h3>
                         <p>
                             A machine learning project using SVM models for stock-related
                             classification tasks.
@@ -298,7 +272,7 @@
     <section id="contact">
         <div class="container">
             <div class="section-box contact">
-                <h3>Contact Me</h3>
+                <h2>Contact Me</h2>
                 <p>Email: your.email@example.com</p>
                 <p>GitHub: <a href="#">https://github.com/yourusername</a></p>
                 <p>LinkedIn: <a href="#">https://linkedin.com/in/yourprofile</a></p>
