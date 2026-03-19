@@ -5,414 +5,233 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Omri Argaman | Portfolio</title>
     <style>
-        :root {
-            --bg: #f8fafc;
-            --surface: #ffffff;
-            --text: #1e293b;
-            --muted: #64748b;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --border: #e2e8f0;
-            --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-            --radius: 18px;
-            --max-width: 1100px;
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fb;
+            color: #222;
             line-height: 1.6;
         }
 
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: var(--accent-hover);
+        header {
+            background-color: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 20px 0;
         }
 
         .container {
-            width: min(92%, var(--max-width));
+            width: 90%;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        header {
-            background: var(--surface);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            min-height: 72px;
+            flex-wrap: wrap;
+        }
+
+        nav h1 {
+            font-size: 1.6rem;
+            color: #111827;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
             gap: 20px;
         }
 
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text);
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: bold;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            font-weight: 600;
-            color: var(--muted);
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
+        nav a:hover {
+            color: #2563eb;
         }
 
         .hero {
-            padding: 70px 0 50px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr;
-            gap: 36px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 3rem;
-            line-height: 1.1;
-            margin-bottom: 16px;
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.15rem;
-            color: var(--muted);
-            margin-bottom: 20px;
-        }
-
-        .hero-text p {
-            max-width: 700px;
-            margin-bottom: 24px;
-            color: #334155;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-weight: 700;
-            transition: 0.2s ease;
-            border: 1px solid transparent;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-hover);
-            color: white;
-        }
-
-        .btn-secondary {
-            background: white;
-            color: var(--text);
-            border-color: var(--border);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .hero-image-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 20px;
-            box-shadow: var(--shadow);
-        }
-
-        .profile-image {
-            width: 100%;
-            aspect-ratio: 4 / 5;
-            object-fit: cover;
-            border-radius: 18px;
-            display: block;
-            background: #e5e7eb;
-        }
-
-        .image-note {
-            margin-top: 14px;
-            color: var(--muted);
-            font-size: 0.95rem;
+            padding: 60px 0 40px;
             text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #111827;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #4b5563;
+            font-size: 1.05rem;
         }
 
         section {
-            padding: 28px 0 10px;
+            padding: 50px 0;
         }
 
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .section-subtitle {
-            color: var(--muted);
-            margin-bottom: 24px;
-            max-width: 700px;
-        }
-
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 24px;
-            box-shadow: var(--shadow);
-        }
-
-        .about p {
-            color: #334155;
-            margin-bottom: 14px;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
-        }
-
-        .skill-item {
-            background: white;
-            border: 1px solid var(--border);
+        .section-box {
+            background-color: white;
+            border: 1px solid #e5e7eb;
             border-radius: 14px;
-            padding: 14px 16px;
-            text-align: center;
-            font-weight: 600;
-            color: #334155;
+            padding: 30px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .about p,
+        .contact p {
+            color: #4b5563;
+            margin-bottom: 12px;
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
         }
 
-        .project-card h3 {
+        .project-card {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .project-card h4 {
             margin-bottom: 10px;
-            font-size: 1.15rem;
+            color: #111827;
         }
 
         .project-card p {
-            color: var(--muted);
-            margin-bottom: 14px;
+            color: #4b5563;
+            margin-bottom: 10px;
         }
 
-        .project-links {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
+        .project-card a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-        }
-
-        .contact-item strong {
-            display: block;
-            margin-bottom: 6px;
-            font-size: 1rem;
+        .project-card a:hover {
+            text-decoration: underline;
         }
 
         footer {
-            padding: 40px 0 60px;
             text-align: center;
-            color: var(--muted);
+            padding: 25px 0;
+            color: #6b7280;
+            font-size: 0.95rem;
         }
 
-        @media (max-width: 900px) {
-            .hero-grid,
-            .projects-grid,
-            .skills-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-text h1 {
-                font-size: 2.3rem;
-            }
-
-            .nav {
+        @media (max-width: 600px) {
+            nav {
                 flex-direction: column;
-                justify-content: center;
-                padding: 14px 0;
+                gap: 12px;
             }
 
-            .nav-links {
-                justify-content: center;
+            nav ul {
+                padding: 0;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-
 <header>
-    <div class="container nav">
-        <div class="logo">Omri Argaman</div>
-        <nav class="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+    <div class="container">
+        <nav>
+            <h1>Omri Argaman</h1>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
         </nav>
     </div>
 </header>
 
 <main>
     <section class="hero">
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <h1>Computer Science Student & Developer</h1>
-                <div class="subtitle">
-                    Building fullstack applications, intelligent systems, and practical software solutions
-                </div>
-                <p>
-                    I’m a Computer Science student focused on software development, machine learning,
-                    and real-world systems. I enjoy building projects end-to-end, from backend logic
-                    and data processing to modern, clean user interfaces.
-                </p>
-
-                <div class="button-group">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                </div>
-            </div>
-
-            <div class="hero-image-card">
-                <!-- Replace profile.jpg with your own image file -->
-                <img src="profile.jpg" alt="Profile photo of Omri Argaman" class="profile-image" />
-                <div class="image-note">
-                    Put your image in the repo and name it <strong>profile.jpg</strong>
-                </div>
-            </div>
+        <div class="container">
+            <h2>Computer Science Student & Developer</h2>
+            <p>
+                I build software projects in web development, machine learning, and intelligent systems.
+                I enjoy turning ideas into practical, clean, and usable solutions.
+            </p>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-subtitle">
-                A short introduction recruiters can scan quickly.
-            </p>
-
-            <div class="card about">
+            <div class="section-box about">
+                <h3>About Me</h3>
                 <p>
-                    I’m a Computer Science student with hands-on experience building software projects
-                    across web development, machine learning, and data-driven systems.
+                    I am a Computer Science student with interest in software engineering,
+                    fullstack development, machine learning, and real-world systems.
                 </p>
                 <p>
-                    My work includes developing fullstack applications, experimenting with intelligent
-                    analytics systems, and designing practical tools that combine backend engineering,
-                    clean frontend structure, and applied problem solving.
+                    I enjoy building end-to-end projects, learning new technologies,
+                    and solving practical technical problems.
                 </p>
                 <p>
-                    I’m currently looking for opportunities where I can contribute, grow as a developer,
-                    and work on meaningful technical challenges.
+                    I am currently looking for opportunities where I can grow as a developer
+                    and contribute to meaningful projects.
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <p class="section-subtitle">
-                Keep this aligned with the roles you’re applying to.
-            </p>
-
-            <div class="skills-grid">
-                <div class="skill-item">Python</div>
-                <div class="skill-item">JavaScript</div>
-                <div class="skill-item">React</div>
-                <div class="skill-item">Node.js</div>
-                <div class="skill-item">MongoDB</div>
-                <div class="skill-item">SQL</div>
-                <div class="skill-item">Machine Learning</div>
-                <div class="skill-item">Computer Vision</div>
             </div>
         </div>
     </section>
 
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">
-                Highlight your strongest work with short, direct descriptions.
-            </p>
-
-            <div class="projects-grid">
-                <div class="card project-card">
-                    <h3>Video Analytics System</h3>
-                    <p>
-                        Built a system combining object detection, analytics, and natural-language style querying
-                        for video event understanding.
-                    </p>
-                    <div class="project-links">
-                        <a href="#">GitHub</a>
-                        <a href="#">More Info</a>
+            <div class="section-box">
+                <h3>Projects</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h4>Video Analytics System</h4>
+                        <p>
+                            A system for analyzing video events using detection models, analytics,
+                            and natural-language style interaction.
+                        </p>
+                        <a href="#">Project Link</a>
                     </div>
-                </div>
 
-                <div class="card project-card">
-                    <h3>Invoice Analysis Platform</h3>
-                    <p>
-                        Developed a platform for extracting and analyzing structured data from invoices
-                        and financial documents.
-                    </p>
-                    <div class="project-links">
-                        <a href="#">GitHub</a>
-                        <a href="#">More Info</a>
+                    <div class="project-card">
+                        <h4>Invoice Analysis Platform</h4>
+                        <p>
+                            A platform for extracting and analyzing data from invoices and financial documents.
+                        </p>
+                        <a href="#">Project Link</a>
                     </div>
-                </div>
 
-                <div class="card project-card">
-                    <h3>SVM Stock Prediction</h3>
-                    <p>
-                        Implemented machine learning models for stock-related classification tasks,
-                        including kernel-based SVM experimentation.
-                    </p>
-                    <div class="project-links">
-                        <a href="#">GitHub</a>
-                        <a href="#">More Info</a>
+                    <div class="project-card">
+                        <h4>SVM Stock Prediction</h4>
+                        <p>
+                            A machine learning project using SVM models for stock-related classification tasks.
+                        </p>
+                        <a href="#">Project Link</a>
                     </div>
                 </div>
             </div>
@@ -421,31 +240,18 @@
 
     <section id="contact">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <p class="section-subtitle">
-                Add your real links and email here.
-            </p>
-
-            <div class="contact-grid">
-                <div class="card contact-item">
-                    <strong>Email</strong>
-                    <p>your.email@example.com</p>
-                </div>
-
-                <div class="card contact-item">
-                    <strong>Profiles</strong>
-                    <p><a href="#">GitHub</a></p>
-                    <p><a href="#">LinkedIn</a></p>
-                    <p><a href="#">Resume</a></p>
-                </div>
+            <div class="section-box contact">
+                <h3>Contact Me</h3>
+                <p>Email: your.email@example.com</p>
+                <p>GitHub: <a href="#">https://github.com/yourusername</a></p>
+                <p>LinkedIn: <a href="#">https://linkedin.com/in/yourprofile</a></p>
             </div>
         </div>
     </section>
 </main>
 
 <footer>
-    © 2026 Omri Argaman
+    <p>© 2026 Omri Argaman</p>
 </footer>
-
 </body>
 </html>
