@@ -40,8 +40,8 @@
         }
 
         .container {
-            width: 90%;
-            max-width: 1000px;
+            width: 92%;
+            max-width: 1150px;
             margin: 0 auto;
         }
 
@@ -49,13 +49,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 0;
+            padding: 20px 0;
             flex-wrap: wrap;
             gap: 12px;
         }
 
         .site-title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: #111827;
         }
@@ -70,10 +70,10 @@
         .nav-links button {
             background: none;
             border: none;
-            padding: 8px 12px;
-            border-radius: 8px;
+            padding: 10px 14px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 0.98rem;
+            font-size: 1rem;
             font-weight: bold;
             color: #374151;
             transition: background-color 0.2s ease, color 0.2s ease;
@@ -90,7 +90,7 @@
         }
 
         main {
-            padding: 36px 0 56px;
+            padding: 40px 0 60px;
         }
 
         .panel {
@@ -104,21 +104,21 @@
         .section-box {
             background: #f9fafb;
             border: 1px solid #e5e7eb;
-            border-radius: 18px;
-            padding: 30px;
+            border-radius: 22px;
+            padding: 42px;
         }
 
         .section-layout {
             display: flex;
             align-items: flex-start;
-            gap: 28px;
+            gap: 36px;
         }
 
         .profile-img {
-            width: 170px;
-            height: 170px;
+            width: 240px;
+            height: 240px;
             object-fit: cover;
-            border-radius: 16px;
+            border-radius: 20px;
             border: 1px solid #d1d5db;
             background: #ffffff;
             flex-shrink: 0;
@@ -130,42 +130,50 @@
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 2.4rem;
             color: #111827;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         p {
             color: #4b5563;
-            line-height: 1.7;
-            margin-bottom: 12px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            font-size: 1.08rem;
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 18px;
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
         }
 
         .project-card {
             background: #ffffff;
             border: 1px solid #e5e7eb;
-            border-radius: 14px;
-            padding: 20px;
+            border-radius: 18px;
+            padding: 28px;
         }
 
         .project-card h3 {
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             color: #111827;
-            margin-bottom: 10px;
+            margin-bottom: 14px;
         }
 
         .project-card p {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 10px;
         }
 
         .contact-links p {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         footer {
@@ -175,12 +183,7 @@
             font-size: 0.95rem;
         }
 
-        @media (max-width: 700px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
+        @media (max-width: 850px) {
             .section-layout {
                 flex-direction: column;
                 align-items: center;
@@ -192,12 +195,44 @@
             }
 
             .profile-img {
-                width: 130px;
-                height: 130px;
+                width: 180px;
+                height: 180px;
+            }
+
+            .section-box {
+                padding: 28px;
             }
 
             h2 {
-                font-size: 1.6rem;
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .site-title {
+                font-size: 1.5rem;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .project-card {
+                padding: 20px;
             }
         }
     </style>
@@ -244,32 +279,65 @@
         <div class="section-box">
             <h2>Projects</h2>
 
-            <div class="projects-grid">
+            <div class="projects-list">
                 <div class="project-card">
                     <h3>Video Analytics System</h3>
                     <p>
-                        A system for analyzing video events using detection models,
-                        analytics, and natural-language interaction.
+                        A system for analyzing video events using detection models, analytics,
+                        and natural-language interaction.
                     </p>
-                    <a href="#">Project Link</a>
+                    <p>
+                        This project focuses on combining computer vision with user-friendly querying,
+                        allowing complex video information to be explored in a more accessible way.
+                    </p>
+                    <p>
+                        You can expand this section with the technologies you used, the architecture,
+                        the challenge you solved, and the specific contribution you made.
+                    </p>
+                    <div class="project-links">
+                        <a href="#">GitHub</a>
+                        <a href="#">More Info</a>
+                    </div>
                 </div>
 
                 <div class="project-card">
                     <h3>Invoice Analysis Platform</h3>
                     <p>
-                        A platform for extracting and analyzing structured data
-                        from invoices and financial documents.
+                        A platform for extracting and analyzing structured data from invoices
+                        and financial documents.
                     </p>
-                    <a href="#">Project Link</a>
+                    <p>
+                        The goal of this project is to automate parts of the document processing flow,
+                        organize extracted data, and support clearer financial insights.
+                    </p>
+                    <p>
+                        Here you can elaborate on parsing, OCR or PDF handling, database design,
+                        backend logic, and how the system improves manual workflows.
+                    </p>
+                    <div class="project-links">
+                        <a href="#">GitHub</a>
+                        <a href="#">More Info</a>
+                    </div>
                 </div>
 
                 <div class="project-card">
                     <h3>SVM Stock Prediction</h3>
                     <p>
-                        A machine learning project using SVM-based models
-                        for stock-related classification tasks.
+                        A machine learning project using SVM-based models for stock-related
+                        classification tasks.
                     </p>
-                    <a href="#">Project Link</a>
+                    <p>
+                        This project explores predictive modeling, feature engineering,
+                        and experimentation with different approaches for financial data.
+                    </p>
+                    <p>
+                        You can use this area to describe your kernels, evaluation process,
+                        technical indicators, model performance, and what you learned from the results.
+                    </p>
+                    <div class="project-links">
+                        <a href="#">GitHub</a>
+                        <a href="#">More Info</a>
+                    </div>
                 </div>
             </div>
         </div>
