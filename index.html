@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Omri Argaman | Portfolio</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background: #ffffff;
-            margin: 0;
+            background: white;
             color: #1f2937;
         }
 
@@ -24,7 +29,7 @@
         .container {
             width: 90%;
             max-width: 900px;
-            margin: auto;
+            margin: 0 auto;
         }
 
         nav {
@@ -32,154 +37,200 @@
             justify-content: space-between;
             align-items: center;
             padding: 18px 0;
+            flex-wrap: wrap;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+            color: #111827;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
-        nav a {
-            text-decoration: none;
-            color: #374151;
-            font-weight: bold;
+        nav button {
+            background: none;
+            border: none;
             cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #374151;
         }
 
-        nav a:hover {
+        nav button:hover {
             color: #2563eb;
         }
 
-        /* SECTIONS */
-        .section {
-            display: none; /* hidden by default */
-            padding: 40px 0;
+        main {
+            padding: 40px 0 60px;
         }
 
-        .active {
-            display: block; /* only active is shown */
+        .panel {
+            display: none;
         }
 
-        .box {
+        .panel.active {
+            display: block;
+        }
+
+        .section-box {
             background: #f9fafb;
             border: 1px solid #e5e7eb;
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 30px;
         }
 
         h2 {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
+            color: #111827;
+        }
+
+        p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            color: #4b5563;
         }
 
         .projects-grid {
             display: grid;
-            gap: 15px;
+            gap: 16px;
         }
 
-        .project {
+        .project-card {
             background: white;
             border: 1px solid #e5e7eb;
-            padding: 15px;
-            border-radius: 10px;
+            border-radius: 12px;
+            padding: 18px;
         }
 
-        /* FLOATING IMAGE */
+        .project-card h3 {
+            margin-bottom: 8px;
+            color: #111827;
+            font-size: 1.1rem;
+        }
+
+        .project-card a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
         .floating-photo {
             position: fixed;
-            right: 20px;
-            top: 100px;
-            width: 140px;
+            top: 90px;
+            right: 24px;
+            width: 150px;
             background: white;
-            border: 1px solid #ddd;
-            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
             padding: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
         }
 
         .floating-photo img {
             width: 100%;
-            border-radius: 10px;
+            display: block;
+            border-radius: 12px;
         }
 
         footer {
             text-align: center;
-            padding: 30px;
-            color: #777;
+            padding: 30px 0;
+            color: #6b7280;
+        }
+
+        @media (max-width: 700px) {
+            .floating-photo {
+                width: 95px;
+                right: 10px;
+                top: 85px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
         }
     </style>
 </head>
-
 <body>
-
 <header>
     <div class="container">
         <nav>
-            <h3>Omri Argaman</h3>
+            <h1>Omri Argaman</h1>
             <ul>
-                <li><a onclick="showSection('about')">About</a></li>
-                <li><a onclick="showSection('projects')">Projects</a></li>
-                <li><a onclick="showSection('contact')">Contact</a></li>
+                <li><button type="button" onclick="showSection('about')">About Me</button></li>
+                <li><button type="button" onclick="showSection('projects')">Projects</button></li>
+                <li><button type="button" onclick="showSection('contact')">Contact Me</button></li>
             </ul>
         </nav>
     </div>
 </header>
 
 <main class="container">
-
-    <!-- ABOUT (default visible) -->
-    <div id="about" class="section active">
-        <div class="box">
+    <section id="about" class="panel active">
+        <div class="section-box">
             <h2>About Me</h2>
             <p>
                 I am a Computer Science student focused on software engineering,
                 machine learning, and fullstack development.
             </p>
             <p>
-                I enjoy building real systems and solving practical problems with clean code.
+                I enjoy building real systems, learning new technologies, and solving
+                practical problems with clean and useful solutions.
+            </p>
+            <p>
+                I am currently looking for opportunities where I can grow as a developer
+                and contribute to meaningful projects.
             </p>
         </div>
-    </div>
+    </section>
 
-    <!-- PROJECTS -->
-    <div id="projects" class="section">
-        <div class="box">
+    <section id="projects" class="panel">
+        <div class="section-box">
             <h2>Projects</h2>
-
             <div class="projects-grid">
-                <div class="project">
-                    <strong>Video Analytics System</strong>
-                    <p>Detection + analytics + LLM querying.</p>
+                <div class="project-card">
+                    <h3>Video Analytics System</h3>
+                    <p>Detection, analytics, and natural-language interaction for video understanding.</p>
+                    <a href="#">Project Link</a>
                 </div>
 
-                <div class="project">
-                    <strong>Invoice Analysis</strong>
-                    <p>Extracting financial data automatically.</p>
+                <div class="project-card">
+                    <h3>Invoice Analysis Platform</h3>
+                    <p>Extraction and analysis of structured data from invoices and financial documents.</p>
+                    <a href="#">Project Link</a>
                 </div>
 
-                <div class="project">
-                    <strong>SVM Stock Model</strong>
-                    <p>Machine learning classification system.</p>
+                <div class="project-card">
+                    <h3>SVM Stock Prediction</h3>
+                    <p>Machine learning classification project using SVM-based models.</p>
+                    <a href="#">Project Link</a>
                 </div>
             </div>
-
         </div>
-    </div>
+    </section>
 
-    <!-- CONTACT -->
-    <div id="contact" class="section">
-        <div class="box">
-            <h2>Contact</h2>
-            <p>Email: your@email.com</p>
-            <p>GitHub: your github</p>
-            <p>LinkedIn: your linkedin</p>
+    <section id="contact" class="panel">
+        <div class="section-box">
+            <h2>Contact Me</h2>
+            <p>Email: your.email@example.com</p>
+            <p>GitHub: https://github.com/yourusername</p>
+            <p>LinkedIn: https://linkedin.com/in/yourprofile</p>
         </div>
-    </div>
-
+    </section>
 </main>
 
-<!-- FLOATING IMAGE -->
 <div class="floating-photo">
-    <img src="profile.jpg" alt="Profile photo">
+    <img src="profile.jpg" alt="Profile photo" />
 </div>
 
 <footer>
@@ -188,15 +239,14 @@
 
 <script>
     function showSection(sectionId) {
-        const sections = document.querySelectorAll(".section");
+        const panels = document.querySelectorAll(".panel");
+        panels.forEach(panel => panel.classList.remove("active"));
 
-        sections.forEach(sec => {
-            sec.classList.remove("active");
-        });
-
-        document.getElementById(sectionId).classList.add("active");
+        const selectedPanel = document.getElementById(sectionId);
+        if (selectedPanel) {
+            selectedPanel.classList.add("active");
+        }
     }
 </script>
-
 </body>
 </html>
