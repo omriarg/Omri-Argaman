@@ -12,8 +12,7 @@
             padding: 0;
         }
 
-        html,
-        body {
+        html, body {
             background: #ffffff;
             color: #1f2937;
             font-family: Arial, sans-serif;
@@ -119,7 +118,7 @@
             width: 260px;
             height: 260px;
             object-fit: cover;
-            object-position: top;
+            object-position: top;   /* KEY LINE */
             border-radius: 20px;
             border: 1px solid #d1d5db;
             flex-shrink: 0;
@@ -166,6 +165,13 @@
             margin-bottom: 14px;
         }
 
+        .project-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
         .project-gallery {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -185,13 +191,6 @@
 
         .project-gallery img:hover {
             transform: scale(1.02);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-            margin-top: 10px;
         }
 
         .contact-links p {
@@ -250,10 +249,6 @@
             h2 {
                 font-size: 2rem;
             }
-
-            .project-gallery {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 700px) {
@@ -292,21 +287,9 @@
             <div class="site-title">Omri Argaman</div>
 
             <ul class="nav-links">
-                <li>
-                    <button id="tab-about" class="active-tab" type="button" onclick="showSection('about')">
-                        About Me
-                    </button>
-                </li>
-                <li>
-                    <button id="tab-projects" type="button" onclick="showSection('projects')">
-                        Projects
-                    </button>
-                </li>
-                <li>
-                    <button id="tab-contact" type="button" onclick="showSection('contact')">
-                        Contact Me
-                    </button>
-                </li>
+                <li><button id="tab-about" class="active-tab" type="button" onclick="showSection('about')">About Me</button></li>
+                <li><button id="tab-projects" type="button" onclick="showSection('projects')">Projects</button></li>
+                <li><button id="tab-contact" type="button" onclick="showSection('contact')">Contact Me</button></li>
             </ul>
         </nav>
     </div>
@@ -320,20 +303,17 @@
             <div class="section-content">
                 <h2>About Me</h2>
                 <p>
-                    I'm a Computer Science graduate with a strong foundation in computer science fundamentals
-                    and theory across multiple areas of the field.
-                </p>
-                <p>
-                    My main interests are machine learning, data structures and algorithms, fullstack
-                    development, and building efficient, scalable systems.
+                    Im a Computer Science graduate having spent a long time learning computer Science fundementals,
+                    as well as theory, in various aspects of CS, looking for new challenges and oppurtunites to grow
+                    My Focuses are ML, DSA, FullStack, building efficient and scalable systems.
                 </p>
                 <p>
                     I enjoy taking ideas from concept to implementation, learning new technologies,
                     and solving real problems with clean, useful solutions.
                 </p>
                 <p>
-                    I am currently looking for job opportunities where I can grow as a developer
-                    and contribute to meaningful technical work.
+                    I am currently looking for job opportunities where I can grow as a developer,
+                    and am available for work
                 </p>
             </div>
         </div>
@@ -347,22 +327,23 @@
                 <div class="project-card">
                     <h3>Video Analytics System</h3>
                     <p>
-                        A system for analyzing video events using anomaly detection models, analytics,
-                        and natural-language interaction.
+                        A system for analyzing video events using anomaly detection models (YOLO), analytics,
+                        and natural-language interaction (OLLAMA).
                     </p>
                     <p>
-                        This project combines computer vision with conversational querying,
-                        allowing complex video information to be explored in a more accessible way.
+                        This project focuses on combining computer vision with user-friendly querying,
+                        allowing complex video information to be explored in a conversational way.
                     </p>
+                    <p>
 
+                    </p>
                     <div class="project-gallery">
-                        <img src="img.png" alt="Video Analytics screenshot 1" onclick="openModal(this.src)" />
-                        <img src="img_1.png" alt="Video Analytics screenshot 2" onclick="openModal(this.src)" />
-                        <img src="img_2.png" alt="Video Analytics screenshot 3" onclick="openModal(this.src)" />
+                        <img src="img.png" alt="Video Analytics screenshot 1" onclick="openModal(this.src)">
+                        <img src="img_1.png" alt="Video Analytics screenshot 2" onclick="openModal(this.src)">
+                        <img src="img_2.png" alt="Video Analytics screenshot 3" onclick="openModal(this.src)">
                     </div>
-
                     <div class="project-links">
-                        <a href="https://github.com/omriarg/naturanomaly" target="_blank">GitHub</a>
+                        <a href="https://github.com/omriarg/naturanomaly">GitHub</a>
                         <a href="#">More Info</a>
                     </div>
                 </div>
@@ -378,10 +359,9 @@
                         organize extracted data, and support clearer financial insights.
                     </p>
                     <p>
-                        This section can describe parsing, OCR or PDF handling, database design,
+                        Here you can elaborate on parsing, OCR or PDF handling, database design,
                         backend logic, and how the system improves manual workflows.
                     </p>
-
                     <div class="project-links">
                         <a href="#">GitHub</a>
                         <a href="#">More Info</a>
@@ -399,12 +379,11 @@
                         and experimentation with different approaches for financial data.
                     </p>
                     <p>
-                        You can describe your kernels, evaluation process, technical indicators,
-                        model performance, and what you learned from the results here.
+                        You can use this area to describe your kernels, evaluation process,
+                        technical indicators, model performance, and what you learned from the results.
                     </p>
-
                     <div class="project-links">
-                        <a href="https://github.com/omriarg/MulticlassSVM" target="_blank">GitHub</a>
+                        <a href="https://github.com/omriarg/MulticlassSVM">GitHub</a>
                         <a href="#">More Info</a>
                     </div>
                 </div>
@@ -419,16 +398,8 @@
             <div class="section-content contact-links">
                 <h2>Contact Me</h2>
                 <p>Email: omriarg@gmail.com</p>
-                <p>
-                    GitHub:
-                    <a href="https://github.com/omriarg" target="_blank">https://github.com/omriarg</a>
-                </p>
-                <p>
-                    LinkedIn:
-                    <a href="https://www.linkedin.com/in/omri-argaman-021549373" target="_blank">
-                        https://www.linkedin.com/in/omri-argaman-021549373
-                    </a>
-                </p>
+                <p>GitHub: <a href="https://github.com/omriarg"></a></p>
+                <p>LinkedIn: <a href="www.linkedin.com/in/omri-argaman-021549373"></a></p>
             </div>
         </div>
     </section>
