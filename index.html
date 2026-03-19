@@ -171,7 +171,26 @@
             flex-wrap: wrap;
             margin-top: 10px;
         }
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 18px 0;
+        }
 
+        .project-gallery img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .project-gallery img:hover {
+            transform: scale(1.02);
+        }
         .contact-links p {
             margin-bottom: 12px;
         }
@@ -260,16 +279,17 @@
             <div class="section-content">
                 <h2>About Me</h2>
                 <p>
-                    I am a Computer Science student focused on software engineering,
-                    fullstack development, machine learning, and building practical systems.
+                    Im a Computer Science graduate having spent a long time learning computer Science fundementals,
+                    as well as theory, in various aspects of CS, looking for new challenges and oppurtunites to grow
+                    My Focuses are ML, DSA, FullStack, building efficient and scalable systems.
                 </p>
                 <p>
                     I enjoy taking ideas from concept to implementation, learning new technologies,
                     and solving real problems with clean, useful solutions.
                 </p>
                 <p>
-                    I am currently looking for opportunities where I can grow as a developer,
-                    contribute to meaningful projects, and continue strengthening my technical skills.
+                    I am currently looking for job opportunities where I can grow as a developer,
+                    and am available for work
                 </p>
             </div>
         </div>
@@ -283,19 +303,23 @@
                 <div class="project-card">
                     <h3>Video Analytics System</h3>
                     <p>
-                        A system for analyzing video events using detection models, analytics,
-                        and natural-language interaction.
+                        A system for analyzing video events using anomaly detection models (YOLO), analytics,
+                        and natural-language interaction (OLLAMA).
                     </p>
                     <p>
                         This project focuses on combining computer vision with user-friendly querying,
-                        allowing complex video information to be explored in a more accessible way.
+                        allowing complex video information to be explored in a conversational way.
                     </p>
                     <p>
-                        You can expand this section with the technologies you used, the architecture,
-                        the challenge you solved, and the specific contribution you made.
+
                     </p>
+                    <div class="project-gallery">
+                        <img src="img.png" alt="Video Analytics screenshot 1" onclick="openModal(this.src)">
+                        <img src="img_1.png" alt="Video Analytics screenshot 2" onclick="openModal(this.src)">
+                        <img src="img_2.png" alt="Video Analytics screenshot 3" onclick="openModal(this.src)">
+                    </div>
                     <div class="project-links">
-                        <a href="#">GitHub</a>
+                        <a href="https://github.com/omriarg/naturanomaly">GitHub</a>
                         <a href="#">More Info</a>
                     </div>
                 </div>
@@ -335,7 +359,7 @@
                         technical indicators, model performance, and what you learned from the results.
                     </p>
                     <div class="project-links">
-                        <a href="#">GitHub</a>
+                        <a href="https://github.com/omriarg/MulticlassSVM">GitHub</a>
                         <a href="#">More Info</a>
                     </div>
                 </div>
@@ -349,9 +373,9 @@
 
             <div class="section-content contact-links">
                 <h2>Contact Me</h2>
-                <p>Email: your.email@example.com</p>
-                <p>GitHub: <a href="https://github.com/yourusername">https://github.com/yourusername</a></p>
-                <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">https://linkedin.com/in/yourprofile</a></p>
+                <p>Email: omriarg@gmail.com</p>
+                <p>GitHub: <a href="https://github.com/omriarg"></a></p>
+                <p>LinkedIn: <a href="www.linkedin.com/in/omri-argaman-021549373"></a></p>
             </div>
         </div>
     </section>
@@ -385,6 +409,10 @@
             selectedButton.classList.add("active-tab");
         }
     }
+
+    <div id="imageModal" className="modal" onClick="closeModal()">
+        <img id="modalImage" className="modal-content" alt="Expanded project image"/>
+    </div>
 </script>
 </body>
 </html>
